@@ -12,9 +12,10 @@ namespace raspico {
         Motor( Motor&& other) = default;
 
         void enable();
-        void dispable();
+        void disable();
         void forward();
         void backward();
+        void stop();
 
     private:
         Gpio pin_A_;

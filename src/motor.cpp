@@ -6,13 +6,16 @@ namespace raspico {
         pin_A_.set_direction(true);
         pin_B_.set_direction(true);
         pin_EN_.set_direction(true);
+        disable();
     }
 
     void Motor::enable() {
+        stop();
         pin_EN_.set_value(true);
     }
 
-    void Motor::dispable() {
+    void Motor::disable() {
+        stop();
         pin_EN_.set_value(false);
     }
 
@@ -24,5 +27,10 @@ namespace raspico {
     void Motor::backward() {
         pin_A_.set_value(false);
         pin_B_.set_value(true);
+    }
+
+    void Motor::stop() {
+        pin_A_.set_value(false);
+        pin_B_.set_value(false);
     }
 } // namespace raspico

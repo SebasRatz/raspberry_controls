@@ -23,4 +23,4 @@ namespace raspico {
     };
  } // namespace raspico
 
-#endif RASPBERRY_CONTROLS_LED_H
+#endif // RASPBERRY_CONTROLS_LED_H
