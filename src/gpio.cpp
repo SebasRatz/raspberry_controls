@@ -10,6 +10,7 @@ namespace raspico {
     Gpio::Gpio(int pin_num) {
         pin_number_ = pin_num;
         pin_name_.append(std::to_string(pin_number_));
+        export_pin();
     }
 
     Gpio::~Gpio() {
@@ -32,7 +33,7 @@ namespace raspico {
         }
     }
 
-    std::string Gpio::read_from_file(std::string filename) {
+    std::string Gpio::read_from_file(std::string filename) const {
         std::string file_path = base_dir_ + filename;
         std::ifstream file(file_path.c_str());
 
@@ -75,7 +76,7 @@ namespace raspico {
         write_to_file(filename, std::to_string((int)value));
     }
 
-    int Gpio::read_value() {
+    int Gpio::read_value() const {
         std::string filename = pin_name_;
         filename.append("/value");
         const std::string content = read_from_file(filename);

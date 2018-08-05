@@ -14,9 +14,6 @@ namespace raspico {
         Gpio(const Gpio& other) = delete;
         Gpio(Gpio&& other) = default;
 
-        void export_pin();
-        void unexport_pin();
-
         /*!
          * Set gpio direction to OUT or IN
          * @param out true for OUT, false for IN
@@ -29,14 +26,18 @@ namespace raspico {
          */
         void set_value(bool value);
 
-        int read_value();
+        int read_value() const;
     private:
         int pin_number_=-1;
         std::string pin_name_ = "gpio";
         std::string base_dir_ ="/sys/class/gpio/";
 
         void write_to_file(std::string filename, std::string content);
-        std::string read_from_file(std::string filename);
+        std::string read_from_file(std::string filename) const;
+
+        void export_pin();
+        void unexport_pin();
+
 
     };
 } // namespace raspico

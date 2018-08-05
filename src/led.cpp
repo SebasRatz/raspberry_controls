@@ -6,7 +6,6 @@
 
 namespace raspico {
     Led::Led(int pin_num) : gpio_(pin_num) {
-        gpio_.export_pin();
         gpio_.set_direction(true);
         gpio_.set_value(false);
     }
