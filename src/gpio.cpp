@@ -2,7 +2,7 @@
 // Created by Sebastian Ratz on 24.02.18.
 //
 
-#include "../include/gpio.h"
+#include "gpio.h"
 #include <fstream>
 
 namespace raspico {

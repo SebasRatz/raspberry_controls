@@ -1,4 +1,4 @@
-#include "../include/motor.h"
+#include "motor.h"
 
 namespace raspico {
 

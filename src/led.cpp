@@ -2,7 +2,7 @@
 // Created by Sebastian Ratz on 24.02.18.
 //
 
-#include "../include/led.h"
+#include "led.h"
 
 namespace raspico {
     Led::Led(int pin_num) : gpio_(pin_num) {
